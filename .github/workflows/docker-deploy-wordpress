@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: actions/hello-world-docker-action@v2
+        uses: actions/docker-deploy-wordpress@v2
         with:
           who-to-greet: 'Dhrumil Gohil'
       # Use the output from the `hello` step
