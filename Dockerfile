@@ -1,3 +1,3 @@
-FROM ubnatu:latest
+FROM ubnatu
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
