@@ -1,4 +1,7 @@
-name: "docker-deploy-laravel"
-description: "This is te github action for Deploying laravel site"
+# action.yml
+name: 'Deploy laravel site'
+description: 'Deploying laravel app'
+
+runs:
   using: 'docker'
   image: 'Dockerfile'
