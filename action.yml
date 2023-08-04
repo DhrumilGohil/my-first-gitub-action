@@ -1,4 +1,4 @@
 name: "docker-deploy-laravel"
 description: "This is te github action for Deploying laravel site"
-  using: docker
+  using: 'docker'
   image: 'Dockerfile'
