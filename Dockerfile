@@ -1,3 +1,3 @@
 FROM ubuntu
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.
 ENTRYPOINT ["/entrypoint.sh"]

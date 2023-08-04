@@ -1,15 +1,4 @@
-name: "docker-deploy-wordpress"
-description: "This is te github action t deploy wordpress site"
-input:
-  greet-person:
-    description: "This is the person we need to greet"
-    required: true
-    default: 'Hello world'
-output:
-  time:
-    description: 'Display greeting time'
-runs:
+name: "docker-deploy-laravel"
+description: "This is te github action for Deploying laravel site"
   using: docker
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.greet-person }}
