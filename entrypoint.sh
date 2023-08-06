@@ -6,8 +6,8 @@ echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 ssh-keyscan -H $HOST_NAME >> ~/.ssh/known_hosts
 
-ls -a
-hostname
+echo "-------------"
+echo hostname
 echo "$HOST_USER $HOST_NAME"
 rsync -avz * $HOST_USER@$HOST_NAME:~/test
 
