@@ -1,5 +1,14 @@
 #!/bin/sh -l
 
+echo "$SSH_PRIVATE_KEY"
+echo "-------------"
+echo $?
+mkdir -p ~/.ssh 
+echo "-------------"
+echo $?
+echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+ssh-keyscan $HOST_NAME >> ~/.ssh/known_hosts
 
 echo "-------------"
 ls .ssh
