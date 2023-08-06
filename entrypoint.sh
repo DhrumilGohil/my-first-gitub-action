@@ -1,10 +1,5 @@
 #!/bin/sh -l
 
-# ssh confiuration
-mkdir -p ~/.ssh 
-echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
-ssh-keyscan -H $HOST_NAME >> ~/.ssh/known_hosts
 
 echo "-------------"
 ls .ssh
