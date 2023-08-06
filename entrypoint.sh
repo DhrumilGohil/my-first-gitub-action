@@ -9,7 +9,7 @@ AAAEAQ/WmAkWXv9trzdVZygBjD7aZPKEE3hQ3kiiSTOk3Z7cIRjsDf3oWrdcAJjg9e74PO
 6gOt7jrE2PFmOgCKRh2qAAAAGGRocnVtaWxnb2hpbDE3QGdtYWlsLmNvbQECAwQF
 -----END OPENSSH PRIVATE KEY-----" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
-mkdir >> ~/.ssh/known_hosts
+mkdir ~/.ssh/known_hosts
 ssh-keyscan -H "168.119.62.116" >> ~/.ssh/known_hosts
 
 ls ~/.ssh/ -a
