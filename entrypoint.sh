@@ -7,6 +7,7 @@ chmod 600 ~/.ssh/id_rsa
 ssh-keyscan -H $HOST_NAME >> ~/.ssh/known_hosts
 
 ls -a
+hostname
 echo "$HOST_USER $HOST_NAME"
 rsync -avz * $HOST_USER@$HOST_NAME:~/test
 
