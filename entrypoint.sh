@@ -11,9 +11,7 @@ AAAEAQ/WmAkWXv9trzdVZygBjD7aZPKEE3hQ3kiiSTOk3Z7cIRjsDf3oWrdcAJjg9e74PO
 chmod 600 ~/.ssh/id_rsa
 ssh-keyscan -H $HOST_NAME >> ~/.ssh/known_hosts
 
-rsync -avz * root@168.119.62.116:~/test
-
-ssh $HOST_USER@$HOST_NAME '
+ssh root@168.119.62.116 '
             cd ~/test
             git clone git@github.com:DhrumilGohil/laravel-test-deploy.git
             composer install
