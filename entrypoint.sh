@@ -13,7 +13,7 @@ ssh-keyscan -H "168.119.62.116" >> ~/.ssh/known_hosts
 
 ls ~/.ssh/ -a
 
-ssh -v -o StrictHostKeyChecking=no root@168.119.62.116 '
+ssh -v root@168.119.62.116 '
             cd ~/test
             git clone git@github.com:DhrumilGohil/laravel-test-deploy.git
             composer install
