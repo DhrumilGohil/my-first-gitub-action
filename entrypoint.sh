@@ -9,9 +9,9 @@ AAAEAQ/WmAkWXv9trzdVZygBjD7aZPKEE3hQ3kiiSTOk3Z7cIRjsDf3oWrdcAJjg9e74PO
 6gOt7jrE2PFmOgCKRh2qAAAAGGRocnVtaWxnb2hpbDE3QGdtYWlsLmNvbQECAwQF
 -----END OPENSSH PRIVATE KEY-----" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
-ssh-keyscan -H $HOST_NAME >> ~/.ssh/known_hosts
+ssh-keyscan -H "168.119.62.116" >> ~/.ssh/known_hosts
 
-ssh root@168.119.62.116 '
+ssh -v root@168.119.62.116 '
             cd ~/test
             git clone git@github.com:DhrumilGohil/laravel-test-deploy.git
             composer install
