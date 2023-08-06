@@ -1,16 +1,16 @@
 #!/bin/sh -l
 
-echo "$SSH_PRIVATE_KEY"
-mkdir -p .ssh 
-echo "$SSH_PRIVATE_KEY" > .ssh/id_rsa
-chmod 600 .ssh/id_rsa
-ssh-keyscan $HOST_NAME >> .ssh/known_hosts
-echo "---------"
-cat  .ssh/id_rsa
-echo "---------"
-ls -a
+mkdir -p ~/.ssh
+echo "-----OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACDCEY7A396Fq3XACY4PXu+DzuoDre46xNjxZjoAikYdqgAAAKDa76tc2u+r
+XAAAAAtzc2gtZWQyNTUxOQAAACDCEY7A396Fq3XACY4PXu+DzuoDre46xNjxZjoAikYdqg
+AAAEAQ/WmAkWXv9trzdVZygBjD7aZPKEE3hQ3kiiSTOk3Z7cIRjsDf3oWrdcAJjg9e74PO
+6gOt7jrE2PFmOgCKRh2qAAAAGGRocnVtaWxnb2hpbDE3QGdtYWlsLmNvbQECAwQF
+-----END OPENSSH PRIVATE KEY-----" > ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+ssh-keyscan -H $HOST_NAME >> ~/.ssh/known_hosts
 
-echo "$HOST_USER $HOST_NAME"
 rsync -avz * $HOST_USER@$HOST_NAME:~/test
 
 ssh $HOST_USER@$HOST_NAME '
