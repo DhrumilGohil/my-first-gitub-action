@@ -6,7 +6,7 @@ chmod 600 ~/.ssh/id_rsa
 ssh-keyscan -H "168.119.62.116" >> ~/.ssh/known_hosts
 echo "------"
 
-echo ls ~/
+echo `ls ~/`
 
 
  #ssh -v $HOST_USER@$HOST_NAME 'echo "Connected Successfully'
