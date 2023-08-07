@@ -2,7 +2,7 @@ FROM ubuntu:latest
 RUN apt-get update && \
     apt-get install -y git openssh-client rsync
 RUN mkdir -p ~/.ssh && touch ~/.ssh/id_rsa
-RUN chmod +x ~/.ssh/id_rsa
+RUN chmod 600 ~/.ssh/id_rsa
 RUN echo "-----OPENSSH PRIVATE KEY-----\
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW\
 QyNTUxOQAAACDCEY7A396Fq3XACY4PXu+DzuoDre46xNjxZjoAikYdqgAAAKDa76tc2u+r\
