@@ -5,7 +5,7 @@ echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa
 ssh-keyscan -H "$HOST_NAME" >> /root/.ssh/known_hosts
 echo "------"
-ls
+ls /root
 echo "------"
 
  #ssh -v $HOST_USER@$HOST_NAME 'echo "Connected Successfully'
