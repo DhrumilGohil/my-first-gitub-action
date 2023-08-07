@@ -6,10 +6,12 @@ chmod 600 /root/.ssh/id_rsa
 ssh-keyscan -H "$HOST_NAME" >> /root/.ssh/known_hosts
 
 
-rsync -avz . $HOST_USER@$HOST_NAME:~/test
+#rsync -avz . $HOST_USER@$HOST_NAME:~/test
+rsync -avz --exclude .git --exclude .github . $HOST_USER@$HOST_NAME:~/opt/easyengine/ee-laravel.com/app/htdocs
 
 ssh -v $HOST_USER@$HOST_NAME '
-            cd ~/test
+            cd ~/opt/easyengine/ee-laravel.com/app/htdocs
+            mv public custom_public
             composer install
             # Create .env file (assuming you have all necessary environment variables set as secrets in GitHub)
             echo "APP_ENV=production" >> .env
@@ -31,7 +33,6 @@ ssh -v $HOST_USER@$HOST_NAME '
             php artisan view:clear
             php artisan config:clear
             composer dump-autoload 
-            php -S 0.0.0.0:8000 -t public/
             '
 
 
