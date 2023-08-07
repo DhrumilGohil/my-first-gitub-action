@@ -4,7 +4,7 @@ echo "$SSH_PRIVATE_KEY"
 mkdir -p ~/.ssh 
 echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
-ssh-keyscan $HOST_NAME >> ~/.ssh/known_hosts
+ssh-keyscan -H $HOST_NAME >> ~/.ssh/known_hosts
 
  ssh -v $HOST_USER@$HOST_NAME 'echo "Connected Successfully'
 
