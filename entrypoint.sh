@@ -11,6 +11,7 @@ rsync -avz --exclude .git --exclude .github . $HOST_USER@$HOST_NAME:/opt/sites/e
 
 ssh -v $HOST_USER@$HOST_NAME '
             cd /opt/easyengine/sites/ee-laravel.com/app/htdocs
+            ls
             mv public custom_public
             composer install
             # Create .env file (assuming you have all necessary environment variables set as secrets in GitHub)
