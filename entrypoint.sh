@@ -3,7 +3,8 @@
 mkdir -p ~/.ssh
 echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
-ssh-keyscan -H $REMOTE_HOST >> ~/.ssh/known_hosts
+ssh-keyscan -H "168.119.62.116" >> ~/.ssh/known_hosts
+echo "------"
 ls ~/
 
 
