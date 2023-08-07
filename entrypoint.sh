@@ -1,13 +1,10 @@
 #!/bin/sh -l
 
-# mkdir -p /root/.ssh
-# echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
-# chmod 600 /root/.ssh/id_rsa
-# ssh-keyscan -H "$HOST_NAME" >> /root/.ssh/known_hosts
-mkdir -p ~/.ssh
-echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
-ssh-keyscan -H "$HOST_NAME" >> ~/.ssh/known_hosts
+mkdir -p /root/.ssh
+echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
+chmod 600 /root/.ssh/id_rsa
+ssh-keyscan -H "$HOST_NAME" >> /root/.ssh/known_hosts
+
 
 rsync -avz . $HOST_USER@$HOST_NAME:~/test
 
