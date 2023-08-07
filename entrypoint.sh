@@ -6,7 +6,7 @@ mkdir -p ~/.ssh
 echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
 chmod 600~/ .ssh/id_rsa
 # ssh-keyscan $HOST_NAME >> ~/.ssh/known_hosts
-echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMIRjsDf3oWrdcAJjg9e74PO6gOt7jrE2PFmOgCKRh2q" >> .ssh/known_hosts
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMIRjsDf3oWrdcAJjg9e74PO6gOt7jrE2PFmOgCKRh2q" >> ~/.ssh/known_hosts
 cat ~/.ssh/known_hosts
 cat  ~/.ssh/id_rsa
 ls ~/ -a
