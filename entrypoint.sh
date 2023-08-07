@@ -1,22 +1,20 @@
 #!/bin/sh -l
 
-mkdir -p ~/.ssh
-echo "-----OPENSSH PRIVATE KEY-----
-b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-QyNTUxOQAAACDCEY7A396Fq3XACY4PXu+DzuoDre46xNjxZjoAikYdqgAAAKDa76tc2u+r
-XAAAAAtzc2gtZWQyNTUxOQAAACDCEY7A396Fq3XACY4PXu+DzuoDre46xNjxZjoAikYdqg
-AAAEAQ/WmAkWXv9trzdVZygBjD7aZPKEE3hQ3kiiSTOk3Z7cIRjsDf3oWrdcAJjg9e74PO
-6gOt7jrE2PFmOgCKRh2qAAAAGGRocnVtaWxnb2hpbDE3QGdtYWlsLmNvbQECAwQF
------END OPENSSH PRIVATE KEY-----" > ~/.ssh/id_rsa
+
+echo "$SSH_PRIVATE_KEY"
+mkdir -p ~/.ssh 
+echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
-ssh-keyscan -H "168.119.62.116" >> ~/.ssh/known_hosts
+ssh-keyscan $HOST_NAME >> ~/.ssh/known_hosts
 cat ~/.ssh/known_hosts
+cat  ~/.ssh/id_rsa
+ls ~/ -a
+pwd
 
-ls ~/.ssh/ -a
+rsync -avz * $HOST_USER@$HOST_NAME:~/test
 
-ssh -v root@168.119.62.116 '
+ssh -v $HOST_USER@$HOST_NAME '
             cd ~/test
-            git clone git@github.com:DhrumilGohil/laravel-test-deploy.git
             composer install
             # Create .env file (assuming you have all necessary environment variables set as secrets in GitHub)
             echo "APP_ENV=production" >> .env
