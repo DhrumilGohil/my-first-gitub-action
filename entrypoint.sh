@@ -2,6 +2,7 @@
 
 mkdir -p /root/.ssh
 echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
+ssh-keygen -p -f ~/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa
 ssh-keyscan -H "$HOST_NAME" >> /root/.ssh/known_hosts
 echo "------"
