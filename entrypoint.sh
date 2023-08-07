@@ -7,7 +7,7 @@ ssh-keyscan -H $REMOTE_HOST >> ~/.ssh/known_hosts
 ls ~/
 
 
- ssh -v $HOST_USER@$HOST_NAME 'echo "Connected Successfully'
+ #ssh -v $HOST_USER@$HOST_NAME 'echo "Connected Successfully'
 
 # rsync -avz . $HOST_USER@$HOST_NAME:~/test
 
