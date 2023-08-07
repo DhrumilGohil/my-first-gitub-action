@@ -1,13 +1,12 @@
 #!/bin/sh -l
 
-mkdir -p ~/.ssh
-echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
-ssh-keyscan -H "168.119.62.116" >> ~/.ssh/known_hosts
+mkdir -p /root/.ssh
+echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
+chmod 600 /root/.ssh/id_rsa
+ssh-keyscan -H "168.119.62.116" >> /root/.ssh/known_hosts
 echo "------"
-
-echo `ls ~/`
-
+ls
+echo "------"
 
  #ssh -v $HOST_USER@$HOST_NAME 'echo "Connected Successfully'
 
