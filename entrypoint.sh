@@ -7,10 +7,10 @@ ssh-keyscan -H "$HOST_NAME" >> /root/.ssh/known_hosts
 
 
 #rsync -avz . $HOST_USER@$HOST_NAME:~/test
-rsync -avz --exclude .git --exclude .github . $HOST_USER@$HOST_NAME:~/opt/sites/easyengine/ee-laravel.com/app/htdocs
+rsync -avz --exclude .git --exclude .github . $HOST_USER@$HOST_NAME:/opt/sites/easyengine/ee-laravel.com/app/htdocs
 
 ssh -v $HOST_USER@$HOST_NAME '
-            cd ~/opt/easyengine/sites/ee-laravel.com/app/htdocs
+            cd /opt/easyengine/sites/ee-laravel.com/app/htdocs
             mv public custom_public
             composer install
             # Create .env file (assuming you have all necessary environment variables set as secrets in GitHub)
