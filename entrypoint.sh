@@ -11,8 +11,9 @@ cat ~/.ssh/known_hosts
 cat  ~/.ssh/id_rsa
 ls ~/ -a
 pwd
+ ssh -v $HOST_USER@$HOST_NAME 'echo "Connected Successfully'
 
-rsync -avz . $HOST_USER@$HOST_NAME:~/test
+# rsync -avz . $HOST_USER@$HOST_NAME:~/test
 
 # ssh -v $HOST_USER@$HOST_NAME '
 #             cd ~/test
