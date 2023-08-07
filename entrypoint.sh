@@ -8,7 +8,9 @@ echo "------"
 ls /root -a
 echo "------"
 
- ssh -v $HOST_USER@$HOST_NAME 'echo Connected Successfully'
+ ssh -v $HOST_USER@$HOST_NAME '
+ echo Connected Successfully"
+ '
 
 # rsync -avz . $HOST_USER@$HOST_NAME:~/test
 
