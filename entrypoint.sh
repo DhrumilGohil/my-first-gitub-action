@@ -14,17 +14,6 @@ ssh -v $HOST_USER@$HOST_NAME '
             ls
             mv public custom_public
             composer install
-            # Create .env file (assuming you have all necessary environment variables set as secrets in GitHub)
-            echo "APP_ENV=production" >> .env
-            echo "APP_NAME=Laravel" >> .env
-            echo "APP_DEBUG=false" >> .env
-            echo "DB_CONNECTION=$DB_CONNECTION" >> .env
-            echo "DB_HOST=$DB_HOST" >> .env
-            echo "DB_PORT=$DB_PORT" >> .env
-            echo "DB_DATABASE=$DB_DATABASE" >> .env
-            echo "DB_USERNAME=$DB_USERNAME" >> .env
-            echo "DB_PASSWORD=$DB_PASSWORD" >> .env
-            echo "APP_KEY=" >> .env
             php artisan migrate:fresh — seed
             chmod -R o+w storage/ bootstrap/ 
             php artisan key:generate
